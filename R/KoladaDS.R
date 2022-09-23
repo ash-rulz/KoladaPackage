@@ -1,6 +1,16 @@
-# library(httr)
-# library(jsonlite)
-# library(tidyr)
+library(httr)
+library(jsonlite)
+library(tidyr)
+#' Title
+#'
+#' @param url_path 
+#'
+#' @return
+#' @export
+#' @import httr
+#' @import tidyr
+#' @import jsonlite
+#' @examples
 get_kolda_data <- function(url_path){
   # base_url <- "https://api.kolada.se/v2/data/kpi/n60026/year/2020,2019,2018" #Total Monthly salary
   base_url <- "https://api.kolada.se/v2/data/"
