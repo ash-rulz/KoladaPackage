@@ -9,9 +9,6 @@ get_kolda_data(url_path)
 \arguments{
 \item{url_path}{Path of the URL}
 }
-\value{
-final_kolda_lst
-}
 \description{
 Title
 }

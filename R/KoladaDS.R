@@ -5,7 +5,7 @@ library(tidyr)
 #'
 #' @param url_path Path of the URL
 #'
-#' @return 
+#' @return final_kolda_lst
 #' @export
 #' @import httr
 #' @import tidyr
@@ -66,5 +66,5 @@ get_kolda_data <- function(url_path){
   final_kolda_lst <- list("MunMaster" = mun_master_df, "FinalData" = final_df)
   return(final_kolda_lst)
 }
-get_kolda_data()
+get_kolda_data('kpi/n60026/year/2020,2019,2018')
 
