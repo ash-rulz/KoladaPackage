@@ -5,7 +5,7 @@ library(tidyr)
 #'
 #' @param url_path Path of the URL
 #'
-#' @return final_kolda_lst
+#' @return 
 #' @export
 #' @import httr
 #' @import tidyr
