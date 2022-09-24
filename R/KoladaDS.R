@@ -3,9 +3,9 @@ library(jsonlite)
 library(tidyr)
 #' Title
 #'
-#' @param url_path 
+#' @param url_path Path of the URL
 #'
-#' @return
+#' @return final_kolda_lst
 #' @export
 #' @import httr
 #' @import tidyr
