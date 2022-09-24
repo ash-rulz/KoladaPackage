@@ -67,4 +67,4 @@ get_kolda_data <- function(url_path){
   return(final_kolda_lst)
 }
 
-get_kolda_data('kpi/n60026/year/2020,2019,2018')
+
