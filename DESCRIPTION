@@ -14,3 +14,6 @@ License: GPL (>= 3)
 RoxygenNote: 7.2.1
 Imports: httr, jsonlite, tidyr
 Encoding: UTF-8
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
