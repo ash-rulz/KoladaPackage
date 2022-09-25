@@ -2,13 +2,16 @@
 % Please edit documentation in R/KoladaDS.R
 \name{get_kolda_data}
 \alias{get_kolda_data}
-\title{Title}
+\title{A Package To Retrieve Data From The Kolada API}
 \usage{
 get_kolda_data(url_path)
 }
 \arguments{
 \item{url_path}{Path of the URL}
 }
+\value{
+final_kolda_lst
+}
 \description{
-Title
+A Package To Retrieve Data From The Kolada API
 }

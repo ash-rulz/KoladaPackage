@@ -1,8 +1,8 @@
 library(httr)
 library(jsonlite)
 library(tidyr)
-#' Title
-#'
+#' A Package To Retrieve Data From The Kolada API
+#' 
 #' @param url_path Path of the URL
 #'
 #' @return final_kolda_lst
@@ -10,7 +10,7 @@ library(tidyr)
 #' @import httr
 #' @import tidyr
 #' @import jsonlite
-#' @examples
+
 get_kolda_data <- function(url_path){
   # base_url <- "https://api.kolada.se/v2/data/kpi/n60026/year/2020,2019,2018" #Total Monthly salary
   base_url <- "https://api.kolada.se/v2/data/"
