@@ -15,5 +15,8 @@ RoxygenNote: 7.2.1
 Imports: httr, jsonlite, tidyr
 Encoding: UTF-8
 Suggests: 
+    knitr,
+    rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+VignetteBuilder: knitr

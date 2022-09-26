@@ -29,3 +29,4 @@ vignettes/*.pdf
 # Ignore the R Proj
 *.Rproj
 .Rbuildignore
+inst/doc

@@ -1,0 +1,41 @@
+---
+title: "kolada-vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{kolada-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, eval=TRUE}
+library(KoladaPackage)
+```
+
+This is a package to retrieve data from the Kolada API. It constructs the API URL based on the function parameter by pasting it together with a pre-defined base URL. The package has a function that finally returns a data frame after parsing data from JSON.
+
+#Example:  
+    The way to use the **KoladaPackage** is as follows:
+    
+    ```{r, include = TRUE, eval = TRUE, echo = TRUE}
+    
+    result <- get_kolda_data('kpi/n60026/year/2020,2019,2018')
+    
+    ```
+    
+  After calling the function as shown above, it returns the following:
+    
+    ```{r, include = TRUE, eval = TRUE, echo = FALSE}
+    
+    head(result$MunMaster,5)
+    head(result$FinalData,5)
+    
+    ```
+    
+  This returns a data frame of required API data that contains a list where first element is master data of names for Municipalities and the second element is a data frame consisting of municipalities' data for the specified KPI and years in the URL.
