@@ -27,10 +27,24 @@ test_that("Salary data frame has proper structure", {
                                          "value"))
 })
 
-test_that("get_kolda_data does not execute", {
+test_that("get_kolda_data does not execute because of invalid url", {
   expect_error(get_kolda_data(''))
 })
 
 test_that("Year is passed in the url string", {
   expect_error(get_kolda_data('kpi/n60026'), )
 })
+test_that("Year is passed in the url string", {
+  expect_error(get_kolda_data('year/2020,2019,2018'), )
+})
+
+test_that("Year is passed in the url string", {
+  expect_error(get_kolda_data('kpi/n60026'), )
+})
+
+test_that("Cannot pass 2 urls", {
+  expect_error(get_kolda_data(c('kpi/n60026/year/2020,2019,2018', 
+                                'kpi/n60026/year/2020,2019,2018')))
+})
+
+
