@@ -1,6 +1,3 @@
-library(httr)
-library(jsonlite)
-library(tidyr)
 #' A Package To Retrieve Data From The Kolada API
 #' 
 #' @param url_path Path of the URL
@@ -17,18 +14,18 @@ get_kolda_data <- function(url_path){
   final_url <- paste(base_url, url_path, sep = "")
   
   #Call the Request
-  kolada_response <- GET(final_url)
+  kolada_response <-  httr::GET(final_url)
 
   #Check if the response is of the JSON type
-  if(http_type(kolada_response) != "application/json")
+  if(httr::http_type(kolada_response) != "application/json")
     stop("Response not in JSON")
   
   #Parse the response
-  parsed <- jsonlite::fromJSON(content(kolada_response, "text"),
+  parsed <- jsonlite::fromJSON(httr::content(kolada_response, "text"),
                                simplifyVector = FALSE)
   
   #Check if the response is good
-  if(http_error(kolada_response)){
+  if(httr::http_error(kolada_response)){
     stop(paste("The request errored out with the status:",
                kolada_response$status_code, 
                ".\n Error Message:", parsed$message))
@@ -37,22 +34,19 @@ get_kolda_data <- function(url_path){
   api_char <- base::rawToChar(kolada_response$content)
   api_JSON <- jsonlite::fromJSON(api_char)
   #Unnest the values list which contains data frames
-  output_tibble <- unnest(as_tibble(api_JSON$values),cols = c('values'))
+  output_tibble <- tidyr::unnest(tidyr::as_tibble(api_JSON$values),cols = c('values'))
   final_df <- as.data.frame(output_tibble)
   final_df <- cbind(final_df[,1:5], value = as.integer(final_df[,7]))
   
   #Get the municipality master data
-  kolada_response <- GET('https://api.kolada.se/v2/municipality')
-  #Check if the response is of the JSON type
-  if(http_type(kolada_response) != "application/json")
-    stop("Response not in JSON")
+  kolada_response <- httr::GET('https://api.kolada.se/v2/municipality')
   
   #Parse the response
-  parsed <- jsonlite::fromJSON(content(kolada_response, "text"),
+  parsed <- jsonlite::fromJSON(httr::content(kolada_response, "text"),
                                simplifyVector = FALSE)
   
   #Check if the response is good
-  if(http_error(kolada_response)){
+  if(httr::http_error(kolada_response)){
     stop(paste("The request errored out with the status:",
                kolada_response$status_code, 
                ".\n Error Message:", parsed$message))
