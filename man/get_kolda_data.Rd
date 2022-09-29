@@ -7,10 +7,10 @@
 get_kolda_data(url_path)
 }
 \arguments{
-\item{url_path}{Path of the URL}
+\item{url_path}{Search string of the URL}
 }
 \value{
-final_kolda_lst
+final_kolda_lst, a list which contains 2 data frames - MunMaster & FinalData
 }
 \description{
 A Package To Retrieve Data From The Kolada API
