@@ -20,7 +20,7 @@ library(KoladaPackage)
 
 This is a package to retrieve data from the Kolada API. It constructs the API URL based on the function parameter by pasting it together with a pre-defined base URL. The package has a function that finally returns a data frame after parsing data from JSON.
 
-#Example:  
+**Example:**  
     The way to use the **KoladaPackage** is as follows:
     
     ```{r, include = TRUE, eval = TRUE, echo = TRUE}
@@ -39,3 +39,13 @@ This is a package to retrieve data from the Kolada API. It constructs the API UR
     ```
     
   This returns a data frame of required API data that contains a list where first element is master data of names for Municipalities and the second element is a data frame consisting of municipalities' data for the specified KPI and years in the URL.
+  
+**Shiny Visualization**
+
+To view the Shiny application visualization of the data retrieved from the **Kolada API Package** please run the following line: 
+
+ ```
+ 
+ shiny::runGitHub('KoladaVisual', 'ash-rulz')
+ 
+ ```
